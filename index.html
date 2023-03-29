@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Video Player in JavaScript </title>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons Link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+   </head>
+<body>
+    <section>
+        <h1 style="margin-right: 20px">Check My light Work!</h1>
+        <div class="container">
+          <div class="main-video">
+              <video src="" autoplay muted controls></video>
+              <i class='bx bx-x close'></i>
+          </div>
+          <div class="videos">
+            <video src="https://videos.files.wordpress.com/oJdyVLwK/check-my-lightwork-volume-3-1.mp4"></video>
+            <i class='bx bx-play-circle'></i>
+          </div>
+          <div class="videos">
+            <video src="https://videos.files.wordpress.com/cODPvCFS/check-my-lightwork-volume-6-1.mp4"></video>
+            <i class='bx bx-play-circle'></i>
+          </div>
+          <div class="videos">
+            <video src="https://videos.files.wordpress.com/AJuni2oK/check-my-lightwork-volume-4-1.mp4"></video>
+            <i class='bx bx-play-circle'></i>
+          </div>
+          <!--div class="videos">
+            <video src="https://videos.files.wordpress.com/WUrMM5CS/check-my-lightwork-volume-1-1.mp4"></video>
+            <i class='bx bx-play-circle'></i>
+          </div-->
+        </div>
+      </section>
+  <section>
+    <h1 style="margin-right: 20px">Beat Box!</h1>
+    <div class="container">
+      <div class="main-video">
+          <video src="" autoplay muted controls></video>
+          <i class='bx bx-x close'></i>
+      </div>
+      <div class="videos">
+        <video src="https://videos.files.wordpress.com/nJucHaH6/beat-box-vol-1.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <video src="https://videos.files.wordpress.com/rwhYwOQG/beat-box-vol-2.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <video src="https://videos.files.wordpress.com/baSerTlF/beat-box-vol-3.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+      <div class="videos">
+        <video src="https://videos.files.wordpress.com/J5h5NY6G/beat-box-vol-4.mp4"></video>
+        <i class='bx bx-play-circle'></i>
+      </div>
+    </div>
+  </section>
+ 
+  <script>
+    const section = document.querySelector("section"),
+    mainVideo = document.querySelector(".main-video video"),
+     videos = document.querySelectorAll(".videos"),
+     close = document.querySelector(".close");
+ 
+     for (var i = 0; i < videos.length; i++) {
+       videos[i].addEventListener("click", (e)=>{
+         const target = e.target;
+         section.classList.add("active");
+         target.classList.add("active");
+         let src = document.querySelector(".videos.active video").src;
+         mainVideo.src = src;
+ 
+         close.addEventListener("click", ()=>{
+           section.classList.remove("active");
+           target.classList.remove("active");
+           mainVideo.src = "";
+         });
+       });
+     };
+  </script>
+</body>
+</html>
